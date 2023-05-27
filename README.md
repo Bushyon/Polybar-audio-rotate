@@ -18,7 +18,7 @@ mkdir ~/.config/polybar/scripts/
 cp sink_change.sh ~/.config/polybar/scripts/sink_change.sh
 cat module.ini >> ~./config/polybar/config.ini
 ```
-You can change the device by right clicking in the module in your Polybar.
+You can change the device by left clicking in the module in your Polybar.
 
 Remember to add **sink_device** to your bar modules!
 ![Module in Polybar config](/images/add_module.png)
@@ -62,4 +62,12 @@ The result will be:
 rotate_sound_cards() {
     active_sink=$(pactl get-default-sink)
     sinks=$(pactl list short sinks | awk '{print $2}')
-```  
+```
+
+## Testing features
+Recently I found a good script to send one single application audio stream to a sink without changing the output for everything.<br>
+This script is made by: [bannatech/pmenu](https://github.com/bannatech/pmenu/tree/master), but is used with dmenu. I managed to convert it to reflect my usecase with Rofi, but is in a test phase. <br>
+If you want to test it, just copy pmenu_rofi to ~/.config/polybar/scripts and uncomment the line below in the sink_device module:
+```
+click-right = ~/.config/polybar/scripts/pmenu_rofi.sh
+```
