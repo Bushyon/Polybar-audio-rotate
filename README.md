@@ -21,6 +21,7 @@ cat module.ini >> ~/.config/polybar/config.ini
 You can change the device by left-clicking on the module in your Polybar.
 
 Remember to add **sink_device** to your bar modules!
+
 ![Module in Polybar config](/images/add_module.png)
 
 ## Extra Tweaks
