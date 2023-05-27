@@ -66,7 +66,7 @@ rotate_sound_cards() {
 
 ## Testing features
 Recently I found a good script to send one single application audio stream to a sink without changing the output for everything.<br>
-This script is made by: [bannatech/pmenu](https://github.com/bannatech/pmenu/tree/master), but is used with dmenu.<br>
+This script is made by [bannatech/pmenu](https://github.com/bannatech/pmenu/tree/master), but is used with dmenu.<br>
 I managed to convert it to reflect my usecase with Rofi, but is in a test phase. <br>
 If you want to test it, just copy pmenu_rofi to ~/.config/polybar/scripts and uncomment the line below in the sink_device module:
 ```
