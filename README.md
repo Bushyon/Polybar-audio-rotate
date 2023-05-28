@@ -1,4 +1,4 @@
-## i3-audio-rotate
+## Polybar audio rotate 
 Rotate between audio devices in Polybar with a click.
 
 ![Module preview](/images/switch.gif)
