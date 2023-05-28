@@ -28,7 +28,7 @@ device(){
     
     if [[ $active_device == *"Focusrite"* ]]; then
         echo Headphone
-    elif [[ $active_device == *"pci-0000_00_1f"* ]]; then 
+    elif [[ $active_device == *"pci"* ]]; then 
         echo Speaker
     else 
         echo Not Configured
