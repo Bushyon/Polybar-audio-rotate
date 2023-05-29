@@ -5,13 +5,10 @@ rotate_sound_cards() {
     active_sink=$(pactl get-default-sink)
     sinks=$(pactl list short sinks | grep -v "hdmi" | awk '{print $2}')
     
-    sinks=$(pactl list short sinks | awk '{print $2}')
     if [[ -z $active_sink || -z $sinks ]]; then
         echo "Unable to retrieve sound cards or HDMI sinks"
         exit 1
     fi
-    found_active_sink=false
-    next_sink=""
 
     for sink in $sinks; do
         if [[ $sink != $active_sink ]]; then
