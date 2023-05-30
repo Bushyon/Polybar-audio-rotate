@@ -9,7 +9,6 @@ rotate_sound_cards() {
         echo "Unable to retrieve sound cards or HDMI sinks"
         exit 1
     fi
-
     for sink in $sinks; do
         if [[ $sink != $active_sink ]]; then
             pactl set-default-sink "$sink"
@@ -22,11 +21,12 @@ rotate_sound_cards() {
 # This is a customized part, change the strings as you need. 
 device(){
     active_device=$(pactl get-default-sink)
-    
+    volume=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -n 1)
+
     if [[ $active_device == *"Focusrite"* ]]; then
-        echo Headphone
+        echo Headphone $volume%
     elif [[ $active_device == *"pci"* ]]; then 
-        echo Speaker
+        echo Speaker $volume%
     else 
         echo Not Configured
     fi
